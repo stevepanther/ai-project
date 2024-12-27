@@ -1,4 +1,4 @@
-# Epic Next.js 14/15 Tutorial Series
+# Video Summarizer
 
 A comprehensive guide to building a modern web application using Next.js 15 and Strapi CMS.
 
