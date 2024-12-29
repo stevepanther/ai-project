@@ -2,9 +2,10 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-function generateYouTubeUrl (videoId: string) {
-    const baseUrl = new URL("https://www.youtube.com/watch");
-    baseUrl.searchParams.append("v", videoId);
+// Utility to generate embed URL from videoId
+function generateYouTubeEmbedUrl(videoId: string) {
+    const baseUrl = new URL("https://www.youtube.com/embed/");
+    baseUrl.pathname += videoId;
     return baseUrl.href;
 }
 
@@ -16,24 +17,23 @@ export default function YouTubePlayer({
     videoId,
 }: Readonly<YouTubePlayerProps>) {
     if (!videoId) return null;
-    let videoUrl;
-    if(!videoId.toLowerCase().startsWith("http")) {
-        videoUrl = generateYouTubeUrl(videoId);
+
+    // Check if the videoId is a full URL or just a videoId
+    let videoUrl = videoId;
+    if (!videoUrl.toLowerCase().startsWith("http")) {
+        // Generate a valid embed URL if it's just a videoId
+        videoUrl = generateYouTubeEmbedUrl(videoUrl);
     }
-    else {
-        videoUrl = videoId;
-    }
-    console.log(videoUrl)
 
     return (
         <div className="relative aspect-video rounded-md overflow-hidden">
             <ReactPlayer
-                url = {videoUrl}
-                width='100%'
-                height='100%'
+                url={videoUrl}
+                width="100%"
+                height="100%"
                 controls
-                className = "absolute top-0 left-0 "
+                className="absolute top-0 left-0"
             />
         </div>
-    )
+    );
 }

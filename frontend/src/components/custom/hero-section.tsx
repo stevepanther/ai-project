@@ -34,13 +34,13 @@ export async function HeroSection({ data } : { readonly data: HeroSectionProps }
     const {heading, subHeading, image, link} = data;
     const linkUrl = userLoggedIn ? "/dashboard" : link.url;
     return (
-        <header className="relative h-[1024px] overflow-hidden">
+        <header className="relative h-[800px] overflow-hidden">
             <StrapiImage
                 alt={image.alternativeText ?? "no alternative text"}
                 className="absolute fixed inset-0 object-cover w-full h-full"
-                height={1024}
+                height={1080}
                 src={image.url}
-                width={1024}
+                width={1920}
             />
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-20">
                 <h1 className="text-4xl font-bold md: text-5xl lg:text-bxl">

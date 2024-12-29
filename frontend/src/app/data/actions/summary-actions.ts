@@ -4,6 +4,7 @@ import { getAuthToken } from "../services/get-token";
 import { mutateData } from "../services/mutate-data";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { toast } from "sonner";
 
 interface Payload {
     data: {
@@ -19,7 +20,6 @@ export async function createSummaryAction(payload:Payload) {
 
     const data = await mutateData("POST", "/api/summaries", payload);
     if (data.error) throw new Error(data.error.message);
-
     redirect("/dashboard/summaries/" + data.data.documentId);
 }
 

@@ -2792,10 +2792,10 @@ keyv@^4.5.3:
   dependencies:
     json-buffer "3.0.1"
 
-langchain@^0.3.7:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/langchain/-/langchain-0.3.7.tgz#a0d2010a9f2dab473eaebfaac5228fac7c2a6f17"
-  integrity sha512-6/Gkk9Zez3HkbsETFxZVo1iKLmaK3OzkDseC5MYFKVmYFDXFAOyJR3srJ9P61xF8heVdsPixqYIsejBn7/9dXg==
+langchain@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.npmjs.org/langchain/-/langchain-0.3.8.tgz#285bb291a686daf063717c12e06fda76335b9270"
+  integrity sha512-EiAHFgBdThuXFmIx9j81wjdPItpRsw0Ck4r5dyhB74gyhehRGna/UK2CTqeKVnIUM/f4g4JbxUgAU4voXljDMw==
   dependencies:
     "@langchain/openai" ">=0.1.0 <0.4.0"
     "@langchain/textsplitters" ">=0.0.0 <0.2.0"

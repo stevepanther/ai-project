@@ -74,6 +74,8 @@ const MainComponent: React.FC = () => {
           });
           setFileLoading(false);
           return;
+      } else {
+        toast.success("Generating Summary");
       }
 
       const summaryREsponseData = await generateLocalVideoSummaryService(trancriptResponseData)
